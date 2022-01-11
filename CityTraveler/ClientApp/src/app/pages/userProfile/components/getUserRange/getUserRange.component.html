@@ -1,0 +1,42 @@
+<div class="userRange-form">
+    <button (click)="hidden = !hidden" class="btn btn-secondary btn-sm">Search users range</button>
+</div>
+<div class="container py-2" *ngIf="!hidden">
+    <form [formGroup]="rangeForm" class="py-2" (ngSubmit)="submit()">
+        <div>
+            <input type="number" name="skip" formControlName="skip" placeholder="skip" min="0">
+        </div>
+        <div>
+            <input type="number" name="take" formControlName="take" placeholder="take" min="0">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+        <div class="py-5">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Avatar</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users; index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>
+                          <img *ngIf="user.avatarSrc !==''" src={{user.avatarSrc}} alt="Avatar">
+                          <img *ngIf="user.avatarSrc ===''" src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198?k=20&m=476085198&s=612x612&w=0&h=8J3VgOZab_OiYoIuZfiMIvucFYB8vWYlKnSjKuKeYQM=" alt="avatar">
+                        </td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.gender}}</td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+         <div *ngIf="error" class="alert alert-warning">{{error}}</div>
+</div>

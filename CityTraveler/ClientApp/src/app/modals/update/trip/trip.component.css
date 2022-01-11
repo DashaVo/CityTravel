@@ -1,0 +1,28 @@
+.bg {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    scroll-behavior: auto;
+  }
+  
+  
+  .dialog{
+    margin: 0 auto;
+      display: flex;
+      align-self:center;
+      top: 50%;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 1em;
+      background: white;
+      
+    flex-direction: column;
+    align-self: center;
+  }
+  li{
+    margin: 1em;
+  }
+  

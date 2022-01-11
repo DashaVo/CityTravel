@@ -1,0 +1,27 @@
+<div class="wrap">
+<search-header></search-header>
+<div class="class-form">
+    <h3>Search users</h3>
+    <p>Input parameters by which you want to find user</p>
+</div>
+<div class="container">
+    <div class="search-input">
+        <span>Name &nbsp;</span>
+        <input type="text" name="Name" [(ngModel)]="props.name" />
+        <span>&nbsp; Gender &nbsp; </span>
+        <input type="text" name="Gender" [(ngModel)]="props.gender" />
+    </div>
+</div>
+<br>
+<div>
+  <button (click)="submitUsers()">Search</button>
+</div>
+<div>
+    <div *ngFor="let user of users">
+      <user-profile [user]="user" [showButtons] = "false"></user-profile>
+    </div>
+    <div *ngIf="users.length === 0">
+      <p>Users not found</p>
+    </div>
+</div>
+</div>

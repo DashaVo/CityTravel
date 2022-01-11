@@ -1,0 +1,20 @@
+<div class="info-container">
+  <div class="info-content">
+    <div class="img-container"  *ngFor="let image of UserEntrInfo.images">
+      <img src={{image.source}} alt="image"/>
+      <img src={{UserEntrInfo.mainImage.source}} alt="mainImage"/>
+    </div>
+    <div class="left-side">
+      <p>Title: {{UserEntrInfo.title}}</p>
+      <p>Description:{{UserEntrInfo.description}}</p>
+      <p>Type: {{UserEntrInfo.type}}</p>
+      <p>AverageRating: {{UserEntrInfo.averageRating}}</p>
+      <p>Trip count: {{UserEntrInfo.tripsCount}}</p>
+      <p>Price: {{UserEntrInfo.averagePrice.value}}</p>
+      <p>Reviews: {{UserEntrInfo.reviewsCount}}</p>
+      <p>Adress: {{UserEntrInfo.address.street.title}}, {{UserEntrInfo.address.houseNumber}}, {{UserEntrInfo.address.apartmentNumber}}</p>
+      <button class="btn btn-secondary btn-sm">Show reviews</button>
+    </div>
+  </div>
+</div>
+

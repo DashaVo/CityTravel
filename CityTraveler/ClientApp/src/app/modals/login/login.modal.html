@@ -1,0 +1,24 @@
+<div class="login-bg" (click)="closeDialog()"></div>
+<ol class="login-modal">
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter email</mat-label>
+      <input type="email" matInput [(ngModel)]="request.email">
+    </mat-form-field>
+  </li>
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter password</mat-label>
+      <input type="password" matInput [(ngModel)]="request.password">
+    </mat-form-field>
+  </li>
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>Remember me?</mat-label>
+      <input matInput type="checkbox" [(ngModel)]="request.isPersistent">
+    </mat-form-field>
+    <mat-dialog-actions>
+      <button class="btn btn-primary" (click)="submit()">Login</button>
+    </mat-dialog-actions>
+  </li>
+</ol>

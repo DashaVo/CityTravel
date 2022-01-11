@@ -1,0 +1,75 @@
+<div class="wrap">
+<search-header></search-header>
+
+  <div class="class-form">
+    <h3>Search entertainments</h3>
+    <p>Input parameters by which you want to find entertainments</p>
+  </div>
+
+
+    <div [formGroup]="entertainmentSearchForm" class="form-group">
+        <div class="row">
+          <div class="row-element">
+            <span class="label-column">Street name</span>
+            <input formControlName="streetName"  class="form-control value-column" type="text" />
+          </div>
+
+          <div class="row-element">
+            <span class="label-column"> Type</span>
+            <select formControlName="type"  class="form-control value-column" name="plan1" id="plan1" >
+              <option value="Event">Event</option>
+              <option value="Institution">Institution</option>
+              <option value="Landscape">Landscape</option>
+              <option value="All" selected>All</option>
+            </select>
+          </div>
+
+          <div class="row-element">
+            <span class="label-column">House number</span>
+            <input formControlName="houseNumber"  class="form-control value-column" type="text" name= "House number"  />
+          </div>
+        </div>
+
+        <div class="row">
+          <div *ngIf = "areAllFieldsImplemented" class="row-element">
+            <span class="label-column">Trip name</span>
+            <input formControlName="tripName"  class="form-control value-column" type="text" name="Trip name"  />
+          </div>
+          <div class="row-element">
+            <span class="label-column"> Title</span>
+            <input formControlName="title" class="form-control value-column" type="text" name="Title" />
+          </div>
+          <div class="row-element">
+            <span class="label-column"> Price more</span>
+            <input value = '0' formControlName="priceMore" class="form-control value-column" type="number"  min=0 name="Price more"  />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-element">
+            <span class="label-column">Price Less</span>
+            <input value = '100000000000' formControlName="priceLess" class="form-control value-column" type="number"  min=0 name="Price less" />
+          </div>
+          <div class="row-element">
+            <span class="label-column"> Average rating more</span>
+            <input value = '0' formControlName="ratingMore" class="form-control value-column" type="number"  min=0 max=5 name="Average rating more"  />
+          </div>
+          <div class="row-element">
+            <span class="label-column"> Average rating less</span>
+            <input value = '5' formControlName="ratingLess" class="form-control value-column" type="number"  min=0 max=5 name="Average rating less"  />
+          </div>
+        </div>
+    </div>
+    <div>
+      <button [disabled]="!entertainmentSearchForm.valid" (click)="submitEntertainments()">Search </button>
+    </div>
+
+    <loading class="loading" *ngIf="isLoading"></loading>
+    <div class="result-area">
+      <entertainment-preview class="entertainment" *ngFor="let entertainment of entertainments" [newConfig]="entertainment"></entertainment-preview>
+    </div>
+    <div *ngIf="entertainments.length === 0">
+      <p>Entertainments not found</p>
+  </div>
+</div>
+

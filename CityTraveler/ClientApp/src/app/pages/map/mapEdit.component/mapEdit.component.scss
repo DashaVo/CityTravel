@@ -1,0 +1,115 @@
+.component-area {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  background-color: #bbcfd7;
+
+  .control-panel-bg{
+    height: 100%;
+    width: 15%;
+    min-width: 200px;
+
+    .control-panel {
+      width: 100%;
+      min-width: min-content;
+      color: white;
+
+      .object-control{
+        height: min-content;
+        width: 100%;
+        cursor: pointer;
+        user-select: none;
+
+        .object {
+          padding: 5px 10px;
+          height: 40px;
+          background-color: #ac7e62;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        .mode {
+          opacity: 0;
+          height: 0px;
+          background-color: #ba9a88;
+          transition: ease .2s;
+
+          &:hover {
+            background-color: #c9ab9b;
+          }
+        }
+
+        .active-mode {
+          padding: 5px 10px;
+          height: 40px;
+          opacity: 1;
+          background-color: #c9ab9b;
+        }
+
+        .hr {
+          height: 4px;
+          width: 100%;
+          background-color: #ba9a88;
+          transition: ease .2s;
+        }
+
+        &:hover {
+          .mode {
+            padding: 5px 10px;
+            height: 40px;
+            opacity: 1;
+          }
+
+          .hr{
+            height: 0px;
+          }
+        }
+
+      }
+
+      .message {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: x-large;
+        font-weight: 400;
+        background-color: #5f932b;
+        align-content: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .map-area {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    overflow-y: hidden;
+
+    .all-maps {
+      position: relative;
+      width: 2000px;
+      height: 2000px;
+
+      .app-map {
+        position: absolute;
+      }
+
+      .map {
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        background-color: rgb(220, 220, 220);
+      }
+    }
+
+    .current-coord {
+      position: absolute;
+      margin: 3px;
+    }
+  }
+}
+
+

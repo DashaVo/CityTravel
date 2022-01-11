@@ -1,0 +1,10 @@
+<div class="shell">
+  <img class="avatar" src="{{mainImage.source ? mainImage.source : defaultImage}}">
+  <div class="avatar-decor">
+    <div class="admin-tools" *ngIf="isAdmin">
+      <div class="update-btn">Update</div>
+      <div class="delete-btn" (click)="openSubmitModal()">Delete</div>
+    </div>
+    <rating class="rating" [ratingValue]="averageRating" (passingRetingEmitter)="emitOutput($event)"></rating>
+  </div>
+</div>

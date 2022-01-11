@@ -1,0 +1,80 @@
+.entertainment-review {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 270px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .3));
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+  }
+}
+
+.content {
+  width: 230px;
+  height: 270px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .rating{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 17, 49, 0.645);
+    height: 30px;
+    padding: 2px;
+    .add-to-trip-btn{
+      border: 0;
+      border-radius: 50%;
+      background-color: royalblue;
+      color: seashell;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 0;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      top: -10px;
+      right: -10px
+
+    }
+    .add-to-trip-btn:hover{
+      width: 35px;
+      height: 35px;
+      transition: 0.5s;
+    }
+
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(0, 17, 49, 0.6);
+    color: white;
+  }
+
+  .title {
+    width: 100%;
+    font-size: larger;
+    font-weight: bold;
+    color: #5feb3c;
+  }
+
+  .half {
+    width: 50%;
+  }
+}

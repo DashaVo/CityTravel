@@ -1,0 +1,77 @@
+
+<form  [formGroup]="tripSearchForm">
+
+  <div  class="search-location container block">
+    <div class = "input-filter">
+      <div class="input-fields">
+
+        <div>
+          <p class="desc">Title</p>
+          <input formControlName="title" type="text" name="title"/>
+        </div>
+        <div>
+            <p class="desc">user </p>
+            <input formControlName="user" type="text" name="user" />
+        </div>
+        <div>
+          <p class="desc">Description</p>
+          <input formControlName="description"  type="text" name="description" />
+        </div>
+        <div>
+          <p class="desc">entertainmentName</p>
+          <input formControlName="entertainmentName"  type="text" name="entertainmentName" />
+        </div>
+
+      </div>
+
+      <div class="input-fields">
+
+        <div >
+          <p class="desc">Price More</p>
+          <input formControlName="priceMore" min="0"  type="number" name="priceMore" />
+        </div>
+
+        <div >
+          <p class="desc">price Less</p>
+          <input formControlName="priceLess" min="0"  type="number" name="priceLess" />
+        </div>
+
+        <div class="rate">
+          <p class="desc">Rating More</p>
+          <input formControlName="averageRatingMore" min="0" max="5"   type="number" name="ratingMore" />
+          <p class="desc">Rating Less</p>
+          <input formControlName="averageRatingLess" min="0" max="5" type="number" name="ratingLess" />
+        </div>
+      </div>
+      <div class="input-fields">
+        <div>
+          <p class="desc">tripStatus </p>
+          <select name="plan1"  formControlName="tripStatus">
+            <option value="1">New</option>
+            <option value="2">InProgress</option>
+            <option value="3">Passed</option>
+            <option value="4" selected>All</option>
+          </select>
+        </div>
+
+        <div >
+          <p class="desc">tripStart</p>
+          <input formControlName="tripStart"  type="date" name="priceLess" />
+        </div>
+
+        <div >
+          <p class="desc">tripEnd</p>
+          <input formControlName="tripEnd"   type="date" name="priceLess" />
+        </div>
+      </div>
+
+    </div>
+    <button [disabled]="!tripSearchForm.valid" class = "btn" (click)="submit() ">
+        <h6 class="btn-text">
+            Search
+        </h6>
+        <mat-icon class="icon">search</mat-icon>
+
+    </button>
+</div>
+</form>

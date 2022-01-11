@@ -1,0 +1,20 @@
+.empty-content {
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 0;
+  color: black;
+
+  img {
+    width: 100px;
+    height: auto;
+  }
+
+  .text {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+  }
+}

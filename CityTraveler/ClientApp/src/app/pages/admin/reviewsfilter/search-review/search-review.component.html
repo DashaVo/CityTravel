@@ -1,0 +1,42 @@
+
+<form  [formGroup]="reviewSearchForm">
+
+  <div  class="search-location container block">
+    <div class = "input-filter">
+      <div class="input-fields">
+
+        <div>
+          <p class="desc">Title</p>
+          <input formControlName="title" type="text" name="title"/>
+        </div>
+        <div>
+            <p class="desc">user </p>
+            <input formControlName="user" type="text" name="user" />
+        </div>
+        <div>
+          <p class="desc">Description</p>
+          <input formControlName="description"  type="text" name="description" />
+        </div>
+      </div>
+
+      <div class="input-fields">
+
+        <div class="rate">
+          <p class="desc">Rating More</p>
+          <input formControlName="ratingMore" min="0" max="5"   type="number" name="ratingMore" />
+          <p class="desc">Rating Less</p>
+          <input formControlName="ratingLess" min="0" max="5" type="number" name="ratingLess" />
+        </div>
+      </div>
+
+
+    </div>
+    <button [disabled]="!reviewSearchForm.valid" class = "btn" (click)="submit() ">
+        <h6 class="btn-text">
+            Search
+        </h6>
+        <mat-icon class="icon">search</mat-icon>
+
+    </button>
+</div>
+</form>

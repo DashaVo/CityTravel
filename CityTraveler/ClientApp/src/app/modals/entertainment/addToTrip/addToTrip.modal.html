@@ -1,0 +1,14 @@
+<div class="bg" (click)="closeModal()"></div>
+<div class="modal-window">
+  <empty-content class="empty-content" *ngIf="trips.length == 0 && isReadyToShow" [message]="'You don`t have any trips'"></empty-content>
+  <loading *ngIf="!isReadyToShow"></loading>
+  <div *ngIf="isReadyToShow">
+    <div class="trip block" *ngFor="let trip of trips">
+      <trip-preview [newConfig]="trip" [isReadMoreActive]="false" (click)="addEntertainmentToTrip(trip.id, entertainmentId)"></trip-preview>
+    </div>
+  </div>
+  <a class="block" href="/new-trip">
+    + Create new trip
+  </a>
+</div>
+

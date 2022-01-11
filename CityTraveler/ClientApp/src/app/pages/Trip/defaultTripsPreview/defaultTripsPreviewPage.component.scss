@@ -1,0 +1,82 @@
+.wrap{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.main-text{
+  font-size: 35px;
+  line-height: 1.5;
+  text-align: justify;
+}
+.link{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.link:hover{
+  transition: 0.9s;
+  color: royalblue;
+}
+.default-trips-element{
+  margin-top: 25px;
+  min-width: 450px;
+  background-color: whitesmoke;
+
+}
+.main-image-of-trip{
+  background-color: silver;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  display: block;
+}
+
+.default-trips-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.default-trip-info{
+  padding: 8px 20px 20px;
+  .default-trip-info-elememt{
+    margin: 12px 0 12px;
+  }
+  .default-trip-info-elememt:last-child{
+    margin-bottom: 0;
+  }
+  .default-trip-title{
+    .default-trip-title-link{
+      text-decoration: none;
+      color: black;
+    }
+    .default-trip-title-text:hover{
+      color: royalblue;
+      text-decoration: underline;
+    }
+  }
+
+  .default-trip-statistic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .default-trip-statistic-element{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .icon{
+        width: 40px;
+        height: 40px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
+.pagination{
+  margin: 0 auto;
+  width: 100px;
+}

@@ -1,0 +1,27 @@
+
+<div (click)="goTo()" class="container card-container block">
+  <div class="content-image">
+    <img [src]="user.avatarSrc" alt="user image">
+  </div>
+  <div class="info">
+    <div class="content-info">
+      <h6 class="title">{{user.name}}</h6>
+      <div class="desc">
+        
+      </div>
+      <div class="desc">
+        username: 
+        <br>
+        <p class="color">
+          {{user.userName}}
+        </p>
+      </div>
+    </div>
+   
+    <div class="buttons-container">
+      <button class="button"><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+  </div>
+  
+</div>

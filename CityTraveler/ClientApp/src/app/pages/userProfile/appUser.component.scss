@@ -1,0 +1,79 @@
+@import 'userProfile.component';
+
+.content {
+  grid-area: content;
+  column-count: 3;
+  column-gap: 10px;
+  padding: 20px;
+}
+.content div{
+  box-shadow: none;
+}
+.img-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin: 0 0 10px 0;
+  break-inside: avoid;
+}
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.left-side {
+  grid-area: left-side;
+  display: grid;
+}
+
+div.left-side {
+  box-shadow: none;
+}
+
+.img-avatar {
+  max-width: 150px;
+  max-height: 140px;
+  border-radius: 50%;
+  margin: 15px;
+  object-fit: cover;
+}
+
+.left-side-content {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  padding: 15px;
+}
+
+div{
+  p {
+  font-family: $font-family;
+  margin: 5px;
+  padding: 0 30px;
+  }
+}
+
+ul{
+  li{
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0 10px;
+  }
+}
+@media(max-width: 320px) {
+  .content {
+    column-count: 1;
+  }
+}
+@media(max-width: 1024px) {
+  .content {
+    column-count: 3;
+  }
+}
+
+@media(max-width: 768px) {
+  .content {
+    column-count: 2;
+  }
+}

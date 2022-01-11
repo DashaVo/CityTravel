@@ -1,0 +1,71 @@
+<div class="add-review-bg">
+<ol class="add-review-modal">
+    <mat-form-field appearance="fill">
+    <ngb-rating max = "5" [(rate)]="currentRate">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 10">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <b>{{currentRate}}</b>
+</mat-form-field>
+<!-- <div class = "cancel">
+  <button  (click) = "onNoClick()">X</button>
+  </div> -->
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter name of review </mat-label>
+    <br>
+    <textarea type="text" matInput [(ngModel)]="request.title"></textarea>
+    <br>
+  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter review</mat-label>
+      <br>
+      <textarea type="text" matInput [(ngModel)]="request.description" cols="80" rows="4"></textarea>
+    </mat-form-field>
+  <hr>
+  <mat-form-field appearance="fill">
+  <label *ngIf = "isAvailable" class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #imageInput
+
+           type="file"
+           multiple
+           accept="image/*"
+           (change)="processFile(imageInput)">
+  </label>
+  <div class  = "img">
+  <div *ngFor="let file of files" class="img-preview-container">
+    <div class="img-preview{{file.status === 'fail' ? '-error' : ''}}"
+         [ngStyle]="{'background-image': 'url('+ file.src + ')'}">
+    </div>
+
+    <div *ngIf="file.pending" class="img-loading-overlay">
+      <div class="img-spinning-circle"></div>
+    </div>
+
+    <div *ngIf="file.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+    <div *ngIf="file.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+  </div>
+  </div>
+
+  <div *ngIf="selectedFile" class="img-preview-container">
+
+    <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+         [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+    </div>
+
+    <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+      <div class="img-spinning-circle"></div>
+    </div>
+
+    <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+    <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+  </div>
+</mat-form-field>
+    <mat-dialog-actions>
+      <button (click)="submit()">Add review</button>
+    </mat-dialog-actions>
+
+</ol>
+</div>

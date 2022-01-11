@@ -1,0 +1,62 @@
+<div class="wrap">
+  <div class="title">
+     <h1 class="title-text">Create your memorable trip</h1>
+     <p>
+      Yoy can choose best activities and add them to your trip.
+    </p>
+  </div>
+  <app-alert *ngIf="isCreated"></app-alert>
+
+  <div class="wrap-columns">
+    <div class="creating-from">
+      <div class="creatinf-form-row">
+        <form class="form" [formGroup]="createTripForm" (ngSubmit)="onSubmit(createTripForm)">
+          <div class="form-element">
+              <label>Add title to your trip</label><br>
+              <div class="input">
+                <input formControlName="title" name="title" placeholder="My best trip" type="text" />
+              </div>
+
+              <div class="error-message"
+              *ngIf="createTripForm.controls['title'].invalid && createTripForm.controls['title'].touched">
+                  <span>Field is required</span>
+              </div>
+          </div>
+          <div class="form-element">
+              <label>Write some words about your trip</label>
+              <div class="input">
+                <textarea formControlName="description"></textarea>
+              </div>
+          </div>
+
+          <div  class="form-element">
+              <label>Add date when you want to star your trip</label>
+              <div class="input">
+                <input formControlName="tripStart" type="date">
+
+              </div>
+              <div class="error-message"
+              *ngIf="createTripForm.controls['tripStart'].invalid && createTripForm.controls['tripStart'].touched">
+                  Field is required
+              </div>
+          </div>
+          <div class="form-element btn">
+              <button ngClass="{'disabled': !createTripForm.valid}" [disabled]="!createTripForm.valid" type="submit">Create Trip</button>
+          </div>
+        </form>
+        <div class="added-enertainments">
+          <selected-entertainments [entertainment]="selectedEntertainment"></selected-entertainments>
+        </div>
+      </div>
+      <div class="entertainments">
+        <div class="entertainments-list">
+          <!-- <search></search> -->
+           <entertainment-preview class="entertainment" (addToTripEmitter)="addEntertainmentsToTrip($event)" *ngFor="let item of entertainments" [isBtnVisible]="true" [newConfig]="item"></entertainment-preview>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="map">
+    palce for map
+  </div> -->
+
+</div>

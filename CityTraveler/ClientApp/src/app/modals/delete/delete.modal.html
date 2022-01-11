@@ -1,0 +1,18 @@
+
+<div class="login-bg">
+  <div class="close-area" (click)="onNoClick()"></div>
+  <ol class="dialog">
+    <mat-dialog-actions>
+      <button (click)="onNoClick()"> <mat-icon>close</mat-icon></button>
+    </mat-dialog-actions>
+    <mat-form-field>
+      <mat-label>Confirm your action?</mat-label>
+    </mat-form-field>
+    <mat-dialog-actions>
+      <button (click)="submit()">yes</button>
+    </mat-dialog-actions>
+    <mat-dialog-actions>
+      <button (click)="onNoClick()">no</button>
+    </mat-dialog-actions>
+  </ol>
+</div>

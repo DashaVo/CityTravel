@@ -1,0 +1,127 @@
+<div *ngIf = "!isError">
+<h1>Your last comments</h1>
+<div class="container">
+    <div class="review-list">
+        <ul>
+            <li>
+                <div class="d-flex">
+                    <div class="right">
+                        <div id="mainDiv" *ngFor="let comment of comments; trackBy: trackItem">
+                        <div class="response-item mt-4 d-flex">
+                            <div class="left">
+                                <span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="profile-pict-img img-fluid" alt="" />
+                                </span>
+                            </div>
+                            <div class="right">
+                                <h4>
+                                    {{comment.name}}
+                                </h4>
+                                <div *ngIf="!comment.isEditing" class="review-description">
+                                    <p>
+                                        {{comment.description}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                              <button (click)="deleteComment(comment.id)">Delete comment</button>
+                              <button (click)="openEditingWindow(comment)">Edit comment</button>
+                              <div *ngIf="comment.isEditing">
+                                <textarea [(ngModel)]="comment.description" cols="80" rows="7"></textarea>
+                                <br>
+                                <button (click)="editComment(comment)">OK</button>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <h1>Your last reviews</h1>
+  <div *ngFor="let review of reviews.reverse(); trackBy: trackItem">
+    <div class="container">
+      <div class="review-list">
+          <ul>
+              <li>
+                  <div class="d-flex">
+                      <div class="left">
+                          <span>
+                              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
+                          </span>
+                      </div>
+                      <div class="right">
+                            <h4>
+                              {{review.userName}}
+                            </h4>
+                              <span  *ngIf="!review.isEditing" class="gig-rating text-body-2">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                                      <path
+                                          fill="currentColor"
+                                          d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"
+                                      ></path>
+                                  </svg>
+                                  {{review.ratingValue}}
+                              </span>
+                              <span *ngIf="review.isEditing">
+                                <mat-form-field appearance="fill">
+                                  <ngb-rating max = "5" [(rate)]="review.ratingValue">
+                                    <ng-template let-fill="fill" let-index="index">
+                                      <span class="star" [class.filled]="fill === 100" [class.bad]="index < 10">&#9733;</span>
+                                    </ng-template>
+                                  </ngb-rating>
+                              </mat-form-field>
+                              <b>{{review.ratingValue}}</b>
+                              </span>
+                              <div>
+                                <button (click)="deleteReview(review.id)">Delete review</button>
+                                <button (click)="openEditingWindowReview(review)">Edit review</button>
+                                <div *ngIf="review.isEditing">
+                                  <textarea [(ngModel)]="review.title" cols="80" rows="3"></textarea>
+                                  <textarea [(ngModel)]="review.description" cols="80" rows="7"></textarea>
+                                  <br>
+                                  <button (click)="editReview(review)">OK</button>
+                                </div>
+                              </div>
+                          <div *ngIf="!review.isEditing" class="review-description">
+                            <b>
+                              {{review.title}}
+                            </b>
+                        </div>
+                          <div *ngIf="!review.isEditing" class="review-description">
+                              <p>
+                                {{review.description}}
+                              </p>
+                          </div>
+                          <div class="images">
+                            <div *ngFor="let image of review.images">
+                              <img src= {{image.source}} alt="review image">
+                              <div *ngIf="review.isEditing" class="review-description">
+                                <button (click)="deleteImage(review.id, image.id)">Delete image</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div *ngIf="review.isEditing" class="review-description">
+                            <label *ngIf = "review.images.length < 7" class="image-upload-container btn btn-bwm">
+                              <span> Select Image </span>
+                              <input #imageInput
+                                     type="file"
+                                     multiple
+                                     accept="image/*"
+                                     (change)="processFile(imageInput, review)">
+                            </label>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf = "isError" >
+  <p> Sorry to say it. But this page is down. Try later, please:) At least you have image of cute cat!!! {{errorMessage}} </p>
+  <img src="https://i.pinimg.com/originals/db/32/23/db32232ee849096679c32d3392a87694.jpg" alt="cute_cat_sorry">
+</div>

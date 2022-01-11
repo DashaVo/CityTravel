@@ -1,0 +1,168 @@
+.title{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: capitalize;
+  color: #0E3010;
+}
+.image{
+
+background-image: url(https://static.photocdn.pt/images/articles/2018/05/18/articles/2017_8/landscape_photography_tips.jpg); 
+background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  width: 100%;
+  height: 10em;
+  display: inline-flex;
+  align-items: flex-end;
+  padding: 0.5em;
+  justify-content: space-between;
+  .type{
+    background-color: rgb(55, 192, 78);
+    color: white;
+    border-radius: 10%;
+    width: fit-content;
+    margin: 0.2em;
+    padding: 0.3em 1.5em;
+    font-size: 16px;
+  }
+}
+.rating{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.desc{
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #5D705E;
+}
+.rate{
+
+  align-items: center;
+}
+.card-wrapper{
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin:1em;
+  box-shadow: 0px 7px 15px rgba(12, 51, 11, 0.25);
+  border-radius: 8px;
+  background-color: white;
+}
+.nav{
+  cursor: pointer;
+}
+.container{
+  padding: 0em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-wrapper:hover{
+
+box-shadow: 0px 4px 20px rgba(16, 200, 247, 0.5);
+}
+.block{
+animation:scaledown 0.1s linear;
+animation-fill-mode: forwards;
+}
+.head{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+
+  color: #5D705E;
+}
+.title{
+      font-size: 20px;
+      display: flex;
+      align-items: flex-end;
+      text-transform: capitalize;
+
+}
+.block:hover{
+animation:scale 0.1s linear;
+animation-fill-mode:both;
+}
+
+.info{
+  
+  display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+
+  .info-text{
+      margin: 1em;
+  }
+    
+}
+
+@keyframes scale{
+0%{
+  transform:scale(1.0);
+}
+100%{
+  transform:scale(1.01);
+}
+}
+
+@keyframes scaledown{
+0%{
+  transform:scale(1.01);
+}
+ 100%{
+  transform:scale(1.0);
+}
+}
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-right: 0.25px;
+}
+
+.button{
+  text-decoration: none;
+  background-color: white;
+  border-width: 0pt;
+  width: 50px;
+  height: 50px;
+}
+
+.button:nth-child(1){
+  color: #1D7820;
+}
+.button:nth-child(2){
+  color: #CD0000;
+
+}
+
+button.button:hover:nth-child(2){
+  color: white;
+  background-color: #CD0000;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-width: 0pt;
+}
+
+button.button:hover:nth-child(1){
+  color: white;
+  background-color: #1D7820;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-width: 0pt;
+}

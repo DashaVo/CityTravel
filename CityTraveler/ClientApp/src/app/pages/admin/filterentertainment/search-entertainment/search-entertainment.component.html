@@ -1,0 +1,62 @@
+
+<form  [formGroup]="entertaimentSearchForm">
+
+  <div  class="search-location container block">
+    <div class = "input-filter">
+      <div class="input-fields">
+
+        <div class="input-string">
+          <p class="desc">Title</p>
+          <input formControlName="titleName" type="text" name="title"/>
+        </div>
+        <div>
+            <p class="desc">Street </p>
+            <input formControlName="streetName" type="text" name="street" />
+        </div>
+        <div class="input-string">
+          <p class="desc">Description</p>
+          <input formControlName="description"  type="text" name="description" />
+        </div>
+
+      </div>
+
+      <div class="input-fields">
+
+        <div class="input-string">
+          <p class="desc">Type </p>
+          <select name="plan1"  formControlName="typeName">
+            <option value="1">Event</option>
+            <option value="2">Institution</option>
+            <option value="3">Landscape</option>
+            <option value="4" selected>All</option>
+          </select>
+        </div>
+
+        <div class="input-number">
+          <p class="desc">Price More</p>
+          <input formControlName="priceMore" min="0"  type="number" name="priceMore" />
+        </div>
+
+        <div class="input-number">
+          <p class="desc">price Less</p>
+          <input formControlName="priceLess" min="0"  type="number" name="priceLess" />
+        </div>
+
+        <div class="input-number rate">
+          <p class="desc">Rating More</p>
+          <input formControlName="ratingMore" min="0" max="5"   type="number" name="ratingMore" />
+          <p class="desc">Rating Less</p>
+          <input formControlName="ratingLess" min="0" max="5" type="number" name="ratingLess" />
+        </div>
+    </div>
+
+    </div>
+    <button [disabled]="!entertaimentSearchForm.valid" class = "btn" (click)="submit() ">
+        <h6 class="btn-text">
+            Search
+        </h6>
+        <mat-icon class="icon">search</mat-icon>
+
+    </button>
+</div>
+</form>

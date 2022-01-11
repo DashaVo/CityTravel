@@ -1,0 +1,20 @@
+
+<div class="card-container">
+    <div class="image-user">
+        <img src="https://www.mantruckandbus.com/fileadmin/media/bilder/02_19/219_05_busbusiness_interviewHeader_1485x1254.jpg" alt="">
+    </div>
+    <div class="info">
+        <div class="title"></div>
+        <div class="username">{{comment.name}}</div>
+        <a [routerLink]="['/admin/review',comment.reviewId]"  routerLinkActive="router-link-active"  class="review-nav"> in this review</a>
+    </div>
+    <div class="content-comment">
+        <div class="comment">{{comment.description}}</div>
+        <div class="status">{{comment.status}}</div>
+    </div>
+    
+    <div class="buttons-container">
+        <button class="button"><mat-icon>edit</mat-icon></button>
+        <button class="button"  ><mat-icon>delete</mat-icon></button>
+    </div>
+</div>

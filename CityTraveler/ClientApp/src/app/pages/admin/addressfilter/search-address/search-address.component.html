@@ -1,0 +1,20 @@
+
+<form  [formGroup]="adsressSearchForm">
+
+  <div  class="search-location block">
+    <div class = "input-filter">
+
+      <div class="input-control">
+        <p class="desc">Title</p>
+        <input formControlName="titleName" type="text" name="title"/>
+      </div>
+
+    </div>
+    <button [disabled]="!adsressSearchForm.valid" class = "btn" (click)="submit() ">
+      <h6 class="btn-text">
+        Search
+      </h6>
+      <mat-icon class="icon">search</mat-icon>
+    </button>
+</div>
+</form>

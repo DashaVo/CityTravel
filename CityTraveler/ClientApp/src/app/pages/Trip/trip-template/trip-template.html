@@ -1,0 +1,37 @@
+<div *ngIf = "isReadyToShow">
+<div class="default-trips-element">
+  <div *ngIf="trip.mainImage" class="main-image-of-trip" style="background-image: url({{trip.mainImage.source}});"></div>
+  <div *ngIf="!trip.mainImage" class="main-image-of-trip" style="background-color:darkgrey;"></div>
+    <div class="default-trip-info">
+      <div class='default-trip-title default-trip-info-elememt'>
+        <a class="default-trip-title-link" routerLink="/default-trip" [queryParams]="{'tripId':trip.id}" routerLinkActive="active-link">
+          <h4 class="default-trip-title-text">{{trip.title}}</h4>
+        </a>
+      </div>
+      <button *ngIf="config.user.isAdmin" (click)="openEditTripModal(true, trip)"> edit</button>
+      <div class="default-trip-rating default-trip-info-elememt">
+        <rating [ratingValue]="trip.averageRating"></rating>
+      </div>
+
+      <div class="default-trip-tags default-trip-info-elememt">
+        <p><b>Tags:</b> {{trip.tagString}}</p>
+      </div>
+      <div class="default-trip-statistic default-trip-info-elememt">
+
+        <div class="default-trip-statistic-element">
+          <div class="icon" style="background-image: url('https://cdn-icons-png.flaticon.com/512/2928/2928883.png');"></div>
+          <p>Count o fplaces</p>
+        </div>
+
+        <div class="default-trip-statistic-element">
+          <div class="icon" style="background-image: url('https://cdn-icons.flaticon.com/png/512/3073/premium/3073484.png?token=exp=1639138166~hmac=86c23393c99e3a6b9626f07fafa2eaca');"></div>
+          <p>Optimal spent: {{trip.optimalSpent}}</p>
+        </div>
+
+        <div class="default-trip-statistic-element">
+          <p class="statistic-value">Price:</p>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

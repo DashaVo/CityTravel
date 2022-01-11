@@ -1,0 +1,38 @@
+<div class="card-wrapper block container"  (click)="goTo()" >
+  
+    <div class="image">
+      <div class="type">event</div>
+      <div class="street">{{info.address.street.title}}{{info.address.houseNumber}}
+        <br>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-text">
+        <div class="title">{{info.title}}</div>
+        <div class="head">Description: 
+        <br>
+        reviewsCount
+        {{info.reviewsCount}} 
+        tripsCount
+        {{info.tripsCount}}
+        <div></div>
+        </div>
+
+        <div class="rating">
+          <p class="head">
+            ratingValue  
+          </p>
+          <ngb-rating [rate]="info.averageRating"></ngb-rating>
+        </div>
+      </div>
+      <div class="option">
+        <div class="buttons-container">
+          <button class="button"><mat-icon>edit</mat-icon></button>
+          <button class="button" (click) = "openDeleteModal()"><mat-icon>delete</mat-icon></button>
+        </div>
+      </div>
+    </div>
+    
+</div>
+

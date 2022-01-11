@@ -1,0 +1,27 @@
+<div class="review">
+  <div class="head">
+    <div class="avatar">
+      <img src="{{config.imageDTO ? config.imageDTO.source : defaultImage}}" alt="">
+    </div>
+    <div class="main-info">
+      <div class="user-name">
+        {{config.name ? config.name : "Unknown User"}}
+      </div>
+      <div class="title">
+        {{config.title ? config.title : "My review"}}
+      </div>
+      <rating class="rating" [ratingValue]="config.ratingValue" [isSmall]="true"></rating>
+    </div>
+  </div>
+
+    <div class="description">
+      <div class="text">
+        {{config.description}}
+      </div>
+      <a class="read-more" [routerLink]="['/reviewSee/id?id=']" [queryParams]="{id:config.id}">read more...</a>
+    </div>
+    <div class="modified">
+        Modified: {{config.modified | date: 'short'}}
+    </div>
+</div>
+<hr>

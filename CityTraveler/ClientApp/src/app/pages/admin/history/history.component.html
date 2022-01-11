@@ -1,0 +1,17 @@
+<div class="main">
+  <nav-admin ></nav-admin>
+  <div class="content">
+    <p class="title" >history</p>
+    <history-card [comment]= "comment1.description" [review]="review1.title" >
+      <p class="title"> Last comment :</p>
+    </history-card>
+    <history-card [comment]= "comment2.description" [review]="review2.title" >
+      <p class="title"> Last user comment: </p>
+      <p class="desc">user:admin@admin.admin</p>
+    </history-card>
+    <history-card [comment] = "trip.title" [review]="trip.description" >
+      <p class="title"> Last trip: </p>
+    </history-card>
+  </div>
+
+</div>

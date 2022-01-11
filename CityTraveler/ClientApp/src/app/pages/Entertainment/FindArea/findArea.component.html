@@ -1,0 +1,15 @@
+<div>
+  <div class="area">
+    <div class="search-panel">
+      <select name="type" id="type" class="search-item" [(ngModel)]="type">
+        <option *ngFor="let type of types" value="{{types.indexOf(type)+1}}">{{type}}</option>
+      </select>
+      <button class="btn btn-primary search-item" (click)="getAll()">Show</button>
+    </div>
+    <hr>
+    <loading class="loading" *ngIf="isLoading"></loading>
+    <div class="result-area">
+      <entertainment-preview class="entertainment" *ngFor="let entertainment of response" [newConfig]="entertainment"></entertainment-preview>
+    </div>
+  </div>
+</div>

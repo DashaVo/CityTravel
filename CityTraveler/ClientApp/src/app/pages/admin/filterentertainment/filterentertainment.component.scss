@@ -1,0 +1,177 @@
+
+.title{
+  display: flex;
+  justify-content: space-between;
+    color: #0061a1;
+}
+.admin-main {
+  display:flex;
+
+
+}
+.content{
+
+  margin: 0 auto;
+  font-size: 20px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: stretch;
+
+}
+
+:host ::ng-deep .icon{
+width: 36.48px;
+height: 36.48px;
+font-size: 30px;
+color: #FFFFFF;
+margin-top: 2px;
+}
+
+
+:host ::ng-deep .loader-container{
+align-items: center;
+margin-top: 2em;
+
+  #loading {
+    width: 3rem;
+    height: 3rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #4239c2;
+    border-radius: 100%;
+    margin: auto;
+    visibility: visible;
+    animation: spin 1s infinite linear;
+  }
+
+
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+
+}
+
+:host ::ng-deep input{
+width: min-content;
+height: 41.9px;
+background: #FFFFFF;
+border: 3px solid #e0ebf5;
+box-sizing: border-box;
+border-radius: 21px;
+margin-right: 46px;
+padding: 10px 5px;
+color: #140f57;
+}
+
+
+:host ::ng-deep .title{
+
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 29px;
+text-transform: uppercase;
+}
+
+
+:host ::ng-deep .desc{
+
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 29px;
+}
+
+
+:host ::ng-deep .container{
+width: 100%;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-top:1em;
+border-radius: 16px;
+padding: 30px;
+background-color: white;
+box-shadow: 0px 7px 15px rgba(12, 51, 11, 0.25);
+}
+
+
+:host ::ng-deep .block{
+animation:scaledown 0.1s linear;
+animation-fill-mode: forwards;
+}
+
+:host ::ng-deep .block:hover{
+animation: scale 0.1s linear;
+animation-fill-mode:both;
+}
+
+
+
+@keyframes scale{
+0%{
+  transform:scale(1.0);
+}
+100%{
+  transform:scale(1.01);
+}
+}
+
+@keyframes scaledown{
+0%{
+  transform:scale(1.01);
+}
+ 100%{
+  transform:scale(1.0);
+}
+}
+
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-right: 0.25px;
+}
+
+.button{
+  text-decoration: none;
+  border-width: 0pt;
+  width: 50px;
+  height: 50px;
+  background-color: #4239c2;
+  color: #e0ebf5;
+  border-radius: 100%;
+}
+
+
+
+button.button:hover{
+  color: white;
+  background-color: #752aee;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-width: 0pt;
+}

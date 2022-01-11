@@ -1,0 +1,20 @@
+<div class="wrap">
+  <h1>Default Trips</h1>
+
+  <div class="main-text">
+    <p>
+      We have collected the best tours of the sights of our country to inspire you to an unforgettable journey.
+      You can choose one of default trips or <span class="link"(click)="openSignUpOrSigninModal()">create your own trip</span>
+    </p>
+  </div>
+
+  <div class="default-trips-container">
+    <div class="default-trips" *ngFor="let trip of trips; index as i">
+      <default-trip-preview (openEditTripModalEmitter)="editButtonOnClick" [newTrip] = "trip"></default-trip-preview>
+   </div>
+  </div>
+  <update-trip-modal *ngIf="editButtonOnClick"></update-trip-modal>
+  <div class="pagination">
+    <app-pagination [pages]="countOfPages"></app-pagination>
+  </div>
+</div>

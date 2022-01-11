@@ -1,0 +1,280 @@
+hr {
+  margin: 6px auto;
+}
+
+body div {
+  transition: all .3s ease;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.main-image {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .3));
+}
+
+.main-info {
+  width: 63%;
+  height: min-content;
+  min-height: 300px;
+  margin: 0 auto;
+  display: block;
+  justify-content: center;
+  background: #FFFFFF;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .3));
+  border-radius: 76px;
+  text-align: center;
+  .title {
+    width: 80%;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 40px;
+    color: #413342;
+  }
+}
+
+.secondary-info {
+  width: 80%;
+  display: inline-flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  color: #413342;
+}
+
+.action-bar {
+  width: 90%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.action-item {
+  margin: 3% 5%;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.helper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.helper div {
+  position: absolute;
+}
+
+.action-item .front-image {
+  width: 80px;
+  height: 80px;
+  margin: 10px 17px;
+  background-color: #6c6a29;
+  transition: all 0.3s ease;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gallery:hover .front-image{
+  width: 86px;
+  height: 86px;
+  margin: 7px 14px;
+}
+.front-image-fone{
+  opacity: .3;
+}
+.gallery:hover .front-image-fone{
+  opacity: 0;
+}
+
+.action-item .middle-image {
+  width: 75px;
+  height: 75px;
+  margin: 4px 10px;
+  background-color: #434119;
+  transform: rotate(342deg);
+  transition: all 0.3s ease;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gallery:hover .middle-image{
+  width: 78px;
+  height: 78px;
+  margin: 3px 7px;
+  transform: rotate(335deg);
+}
+.middle-image-fone {
+  opacity: .4;
+}
+.gallery:hover .middle-image-fone{
+  opacity: .3;
+}
+
+.action-item .back-image {
+  width: 65px;
+  height: 65px;
+  margin: 5px 30px;
+  background-color: #27260f;
+  transform: rotate(30deg);
+  transition: all 0.3s ease;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gallery:hover .back-image{
+  width: 68px;
+  height: 68px;
+  margin: 0 26px;
+  transform: rotate(35deg);
+}
+.back-image-fone {
+  opacity: .4;
+}
+.gallery:hover .back-image-fone{
+  opacity: .5;
+}
+
+.review-img {
+  height: 86px;
+  width: 90px;
+  margin: 6px 14px;
+  transition: all 0.3s ease;
+}
+.review:hover .review-img{
+  height: 92px;
+  width: 98px;
+  margin: 3px 10px;
+}
+
+.map-img {
+  height: 86px;
+  width: 90px;
+  margin: 6px 14px;
+}
+.pointer {
+  height: 175px;
+  transition: all 0.3s ease;
+}
+.map:hover .pointer{
+  y: -15;
+  height: 190px;
+}
+
+.action-btn {
+  width: 100%;
+  height: 25%;
+  background: #413342;
+  color: white;
+  font-weight: 500;
+  border-radius: 58px;
+  transition: all 0.3s ease;
+  border: none;
+
+  &:hover {
+    background: #544255;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main-info {
+    width: 95%;
+    margin-top: 35px;
+  }
+}
+
+.description {
+  height: min-content;
+  width: 95%;
+  margin: 35px auto;
+  padding: 15px 35px 35px;
+  display: block;
+  justify-content: center;
+  background: #FFFFFF;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .3));
+  border-radius: 76px;
+  text-align: center;
+
+  .title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #413342;
+    margin: 0 auto;
+  }
+
+  .text {
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    color: #413342;
+  }
+}
+
+.bottom-info {
+  display: inline-flex;
+  height: min-content;
+  width: 100%;
+  margin: 0;
+
+  .content {
+    height: min-content;
+    min-height: 100%;
+    width: 45%;
+    margin: 0 2.5% 35px;
+    padding: 15px 35px;
+    display: block;
+    background: #FFFFFF;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .3));
+    border-radius: 76px;
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      color: #413342;
+      width: 100%;
+      text-align: center;
+    }
+
+    .pages-num {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      div {
+        width: 20px;
+        margin: 0 5px;
+        font-weight: 300;
+        font-size: 17px;
+        color: #614b63;
+        cursor: pointer;
+      }
+
+      .active {
+        font-weight: 400;
+        font-size: 25px;
+        color: #413342;
+        cursor: default;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bottom-info .content {
+    width: 100%;
+  }
+}
+

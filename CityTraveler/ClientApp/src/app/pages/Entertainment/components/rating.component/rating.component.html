@@ -1,0 +1,5 @@
+<div class="stars">
+  <div *ngFor="let item of config.rates">
+    <div class="star" [ngClass]="{'active': item < ratingValue, 'small': config.isSmall}" (click)="emitOutput(item + 0.5)"></div>
+  </div>
+</div>

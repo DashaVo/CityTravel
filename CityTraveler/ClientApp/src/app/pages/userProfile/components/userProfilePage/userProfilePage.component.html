@@ -1,0 +1,50 @@
+<div *ngIf = "isReadyToShow">
+<div *ngIf = "showButtons">
+  <button (click)="hidden = !hidden" class="btn btn-secondary btn-sm">Show my profile</button>
+</div>
+<div class="container py-2" *ngIf="!hidden">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img *ngIf="userInfo.avatarSrc && userInfo.avatarSrc !==''" [src]="userInfo.avatarSrc" alt="avatar" class="avatarImg">
+          <img
+            *ngIf="userInfo.avatarSrc ==='' || !userInfo.avatarSrc"
+            [src]="defaultAvatar"
+            alt="avatar" class="img-thumbnail">
+        </div>
+        <div class="col-md-8">
+          <div class="card-list">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Name:
+                {{userInfo.name}}</li>
+              <li class="list-group-item">UserName:
+                {{userInfo.username}}</li>
+              <li class="list-group-item"> PhoneNumber:
+                {{userInfo.phoneNumber}}</li>
+              <li class="list-group-item">Email:
+                {{userInfo.email}}</li>
+              <li class="list-group-item"> Gender:
+                {{userInfo.gender}}</li>
+              <li class="list-group-item"> Birthday:
+                {{userInfo.birthday}}</li>
+            </ul>
+          </div>
+          <div *ngIf = "showButtons">
+            <button type="button" class="btn btn-primary"  (click)="delete()">Delete my profile</button>
+          </div>
+          <div *ngIf="result">  User deleted: {{result}}</div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="error" class="alert alert-warning ">{{error}}</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

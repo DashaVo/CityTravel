@@ -1,0 +1,13 @@
+<div class="main">
+  <nav-admin ></nav-admin>
+  <div class="content">
+    <p class="title">statistic</p>
+
+    <div class="content-charts" >
+      <my-bar-chart class="container block" [pie]= 'charts.pie'></my-bar-chart>
+      <line-chart class="container block" [reg]= 'charts.registration'></line-chart>
+      <activity class="container block" [content]= 'acivity.pie'></activity>
+    </div>
+  </div>
+
+</div>

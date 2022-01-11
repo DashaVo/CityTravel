@@ -1,0 +1,95 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #486770;
+  transition: ease .2s;
+}
+
+.property-name {
+  padding: 5px;
+  height: 33px;
+  background-color: #5b828e;
+  font-size: 17px;
+}
+
+.property-name-less {
+  padding: 5px 5px 0px 10px;
+  height: 33px;
+  background-color: #5b828e;
+  font-size: 14px;
+}
+
+.points {
+  min-height: 25px;
+  max-height: 30vh;
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .point {
+    background-color: #25353a;
+    border-radius: 9px;
+    margin: 3px;
+    padding: 0 4px;
+    font-size: 14px;
+    transition: ease .2s;
+  }
+}
+
+.combo-box {
+  width: 100%;
+}
+
+.action-btn {
+  width: 50%;
+  margin: 4px auto;
+  padding: 5px;
+  background-color: #5b828e;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align: center;
+  transition: ease .2s;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #4d7582;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.img-preview-container {
+  position: relative;
+  margin: 5px 0;
+
+  .img-preview {
+    background: center center no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    height: 180px;
+    width: 180px;
+  }
+}
+
+.invalid {
+  background-color: #8e5b5b;
+}
+
+.input {
+  width: 100%;
+}
+
+.hr {
+  height: 4px;
+  width: 100%;
+  background-color: #486770;
+  transition: ease .2s;
+}
+

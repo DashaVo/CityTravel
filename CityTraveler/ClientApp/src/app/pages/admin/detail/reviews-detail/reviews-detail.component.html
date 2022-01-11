@@ -1,0 +1,22 @@
+
+<div class="main">
+  <nav-admin></nav-admin>
+  <div class="container block">
+    <p class="title">{{review.title}}</p>
+    <p class="desc">{{review.description}}</p>
+    <p class="desc">{{review.modified}}</p>
+    <div class="comment-content">
+      
+          <div class="comment-card"  *ngFor="let item of comments">
+            <cardcomment [comment]="item"></cardcomment>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="button"><mat-icon>edit</mat-icon></button>
+        <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+    </div>
+    </div>
+    
+  </div>
+  
+

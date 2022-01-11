@@ -1,0 +1,81 @@
+.default-trip{
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.default-trip-header{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .default-trip-title-rating{
+    display: flex;
+
+    .default-trip-title-text{
+      color:royalblue;
+      font-size: 45px;
+      max-width: 600px;
+    }
+
+    .default-trip-average-rating{
+      margin-left: 35px;
+      align-self: center;
+    }
+  }
+
+  .start-trip-btn{
+    align-self: center;
+    margin: 0 auto;
+    .btn{
+      height: 50px;
+      width: 150px;
+      background-color:royalblue;
+      font-weight: 600;
+      color: silver;
+    }
+  }
+
+}
+
+.defaut-trip-little-info{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  .defaut-trip-little-info-elem{
+    border-right: 2px solid royalblue;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .defaut-trip-little-info-elem:last-child{
+    border: none;
+    padding-right: 0;
+  }
+  .defaut-trip-little-info-elem:first-child{
+    padding-left: 0;
+  }
+
+}
+
+.default-trip-description-text{
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.default-trip-reviews{
+  border-top: 2px solid darkgreen;
+  padding-top: 20px;
+  .default-trip-reviews-title{
+    margin: 10px 0;
+    color: royalblue;
+  }
+}
+.writeRev {
+  background-color: rgb(74, 165, 160);
+  border: none;
+  color:white;
+  padding: 9px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 5px;
+}

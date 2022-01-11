@@ -1,0 +1,73 @@
+<div class="modal-bg">
+  <div class="modal-wrap">
+      <h4 class="modal-element modal-title">Registration</h4>
+
+      <div class="modal-element-row">
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your full name</mat-label>
+            <input type="text" matInput [(ngModel)]="request.name">
+          </mat-form-field>
+        </div>
+
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Write your Mega nick name</mat-label>
+            <input type="text" matInput [(ngModel)]="request.userName">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="modal-element-row">
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Write your gender</mat-label>
+            <input type="text" matInput [(ngModel)]="request.gender">
+          </mat-form-field>
+        </div>
+
+
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Email</mat-label>
+            <input type="email" matInput [(ngModel)]="request.email">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="modal-element-row">
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Pick a password</mat-label>
+            <input type="password" matInput [(ngModel)]="request.password">
+          </mat-form-field>
+        </div>
+
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm your password</mat-label>
+            <input type="password" matInput [(ngModel)]="request.password">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="modal-element-row">
+        <div class="modal-element">
+          <mat-form-field appearance="fill">
+            <mat-label>Add cool picture</mat-label>
+
+            <input (change)="onFileSelected($event)" accept="image/*" type="file" class="image-input" matInput [(ngModel)]="request.avatarSrc">
+
+          </mat-form-field>
+        </div>
+
+        <div class="modal-element user-avatar">
+          <img src={{request.avatarSrc}} alt="User avatar">
+        </div>
+      </div>
+
+      <mat-dialog-actions class="modal-btn">
+        <button class="btn" (click)='submit()'>Send</button>
+      </mat-dialog-actions>
+  </div>
+</div>

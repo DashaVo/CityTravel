@@ -1,0 +1,25 @@
+
+<div class="main">
+  <nav-admin ></nav-admin>
+<div class="content">
+  <div class="title">
+    <p>Users</p>
+    <p>find {{users.length}}</p>
+    <div class="buttons-container">
+      <button class="button"><mat-icon>add</mat-icon></button>
+    </div>
+  </div>
+  <search-user (getUser)="GetFilterUsers($event,0,10)"></search-user>
+<div class="search-results"
+infinite-scroll
+[infiniteScrollDistance]="scrollDistance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="onScrollDown()">
+<div  class="content" *ngFor="let item of users">
+  <card-user [user]="item"></card-user>
+</div>
+</div>
+
+</div>
+
+</div>

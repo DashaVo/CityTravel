@@ -1,0 +1,69 @@
+<div class="property-name" [ngClass]="{'invalid': !currentType}">Type *</div>
+<select name="type" class="combo-box" [(ngModel)]="currentType" #typeComboBox  (change)="currentType = typeComboBox.value">
+  <option *ngFor="let type of types" value="{{types.indexOf(type)+1}}">{{type}}</option>
+</select>
+<div class="hr"></div>
+
+<div class="property-name">Address *</div>
+<div class="property-name-less" [ngClass]="{'invalid': !currentStreetId}">Street *</div>
+<select name="type" id="type" class="combo-box" [(ngModel)]="currentStreetId" #streetComboBox (change)="setCurrentStreetId(streetComboBox.value)">
+  <option *ngFor="let street of streets" value="{{street.id}}">{{street.title}}</option>
+</select>
+
+<form class="form"
+  [formGroup]="addEntertainmentForm"
+  (ngSubmit)="submitAddEntertainment(addEntertainmentForm)">
+
+  <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['houseNumber'].invalid && addEntertainmentForm.controls['houseNumber'].touched}">House Number *</div>
+  <input class="input" formControlName="houseNumber" type="number">
+  <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['apartmentNumber'].invalid && addEntertainmentForm.controls['apartmentNumber'].touched}">Apartment Number *</div>
+  <input class="input" formControlName="apartmentNumber" type="number">
+  <div class="hr"></div>
+
+  <div class="property-name">Point *</div>
+  <div class="points">
+    <div class="point" *ngIf="point">{{point.longitude}} : {{point.latitude}}</div>
+  </div>
+  <button class="action-btn" *ngIf="point" (click)="cleanCanvas()"> Clear </button>
+
+  <div class="property-name" [ngClass]="{'invalid': addEntertainmentForm.controls['title'].invalid && addEntertainmentForm.controls['title'].touched}">Title *</div>
+  <input class="input" formControlName="title" type="text">
+  <div class="hr"></div>
+
+  <div class="property-name" [ngClass]="{'invalid': addEntertainmentForm.controls['description'].invalid && addEntertainmentForm.controls['description'].touched}">Description</div>
+  <textarea class="input" formControlName="description"  type="text" wrap="soft"></textarea>
+  <div class="hr"></div>
+
+  <div class="property-name" [ngClass]="{'invalid': !isPhotoValid}">Images *</div>
+  <label class="action-btn">
+    <span>Upload</span>
+    <input #imageInput type="file" multiple accept="image/*" (change)="loadImages(imageInput)">
+  </label>
+  <div *ngFor="let file of files" class="img-preview-container">
+    <div class="img-preview"
+         [ngStyle]="{'background-image': 'url('+ file.src + ')'}">
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="property-name">Average Price</div>
+  <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['priceTitle'].invalid && addEntertainmentForm.controls['priceTitle'].touched}">Title</div>
+  <input class="input" formControlName="priceTitle" type="text">
+  <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['priceValue'].invalid && addEntertainmentForm.controls['priceValue'].touched}">Value</div>
+  <input class="input" formControlName="priceValue" type="number">
+  <div class="hr"></div>
+
+  <div class="for-event" *ngIf="compareType('Event')">
+    <div class="property-name">Event Date</div>
+    <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['eventBegin'].invalid && addEntertainmentForm.controls['eventBegin'].touched}">Begin</div>
+    <input formControlName="eventBegin" type="date">
+    <div class="property-name-less" [ngClass]="{'invalid': addEntertainmentForm.controls['eventEnd'].invalid && addEntertainmentForm.controls['eventEnd'].touched}">End</div>
+    <input formControlName="eventEnd" type="date">
+    <div class="hr"></div>
+  </div>
+
+
+  <button class="action-btn"
+      [ngClass]="{'invalid': !addEntertainmentForm.valid || !point}"
+      type="submit">Submit</button>
+</form>

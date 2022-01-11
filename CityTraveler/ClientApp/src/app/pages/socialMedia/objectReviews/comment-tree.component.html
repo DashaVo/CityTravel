@@ -1,0 +1,82 @@
+<div *ngIf = "!isErrorAdding&&!isErrorGettingComments">
+<div id="mainDiv" *ngFor="let review of reviews.reverse()">
+    <div class="container">
+      <div class="review-list">
+          <ul>
+              <li>
+                  <div class="d-flex">
+                      <div class="left">
+                          <span>
+                              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
+                          </span>
+                      </div>
+                      <div class="right">
+                          <h4>
+                              {{review.userName}}
+                              <span class="gig-rating text-body-2">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                                      <path
+                                          fill="currentColor"
+                                          d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path>
+                                  </svg>
+                                  {{review.ratingValue}}
+                              </span>
+                          </h4>
+                          <div>
+                            <button (click)="openCommentText(review)">Add comment</button>
+                        </div>
+                        <div>
+                          <button *ngIf = "review.isHidden" (click)="changeIsHidden(review)">Show comments</button>
+                          <button *ngIf = "!review.isHidden" (click)="changeIsHidden(review)">Hide comments</button>
+                        </div>
+                        <div *ngIf="review.isOpen">
+                          <textarea [(ngModel)]="request.description" cols="80" rows="7"></textarea>
+                          <br>
+                          <button (click)="addComment(review)">OK</button>
+                        </div>
+                          <b>
+                            {{review.title}}
+                          </b>
+                          <div class="review-description">
+                              <p>
+                                {{review.description}}
+                              </p>
+                          </div>
+                          <div class="images">
+                            <div class="img-container" *ngFor="let image of review.images">
+                                <img src= {{image.source}} alt="review image">
+                            </div>
+                           </div>
+                          <div *ngIf = "!review.isHidden">
+                          <div id="mainDiv" *ngFor="let comment of review.comments">
+                          <div class="response-item mt-4 d-flex">
+                              <div class="left">
+                                  <span>
+                                      <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="profile-pict-img img-fluid" alt="" />
+                                  </span>
+                              </div>
+                              <div class="right">
+                                  <h4>
+                                      {{comment.name}}
+                                  </h4>
+                                  <div class="review-description">
+                                      <p>
+                                          {{comment.description}}
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+    </div>
+</div>
+</div>
+<div *ngIf = "isErrorGettingComments||isErrorAdding" >
+    <p> Sorry to say it. But something went wrong. Try later, please:) At least you have image of cute cat!!! </p>
+    <img src="https://i.pinimg.com/originals/db/32/23/db32232ee849096679c32d3392a87694.jpg" alt="cute_cat_sorry">
+</div>

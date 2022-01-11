@@ -1,0 +1,35 @@
+<div class="modal-bg" >
+
+</div>
+<div class="wrap">
+
+    <div class="updating-form-element">
+      <mat-form-field appearance="fill">
+        <mat-label>Trip title</mat-label>
+        <input type="text" matInput [(ngModel)]="tripData.title" value={{tripData.title}}>
+      </mat-form-field>
+    </div>
+
+    <div class="updating-form-element">
+      <mat-form-field appearance="fill">
+        <mat-label>Trip Description</mat-label>
+        <input type="text" matInput [(ngModel)]="tripData.description" value={{tripData.description}}>
+      </mat-form-field>
+    </div>
+
+    <div class="updating-form-element">
+      <div class="main-image-show">
+        <img src="" alt="wewe">
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Main Image</mat-label>
+        <input (change)="onFileSelected($event)" accept="image/*" type="file" matInput [(ngModel)]="tripData.mainImage.source" value={{tripData.mainImage.source}}>
+      </mat-form-field>
+    </div>
+
+    <mat-dialog-actions class="updating-form-element button">
+      <button  class="btn">Update</button>
+    </mat-dialog-actions>
+
+</div>

@@ -1,0 +1,40 @@
+
+<div class="component-area">
+  <div class="control-panel-bg">
+    <div class="control-panel">
+      <div class="object-control" *ngFor="let object of router">
+        <div class="object">{{object.name}}</div>
+        <div class="mode" *ngFor="let mode of object.modes"
+              [ngClass]="{'active-mode': config.currentAction.object == object.name && config.currentAction.mode == mode.name}"
+              (click)="mode.method()">{{mode.name}}</div>
+        <div class="hr"></div>
+      </div>
+
+      <add-street-form
+        *ngIf="config.currentAction.object == 'Street' && config.currentAction.mode == 'Add'"
+        (submitAddStreetEmitter)="isSucceeded = $event"
+        (cleanCanvasEmitter)="cleanCanvas()">
+      </add-street-form>
+
+      <add-entertainment-form
+        *ngIf="config.currentAction.object == 'Entertainment' && config.currentAction.mode == 'Add'"
+        (submitAddEntertainmentEmitter)="isSucceeded = $event"
+        (cleanCanvasEmitter)="cleanCanvas()">
+      </add-entertainment-form>
+
+      <remove-street-form
+        *ngIf="config.currentAction.object == 'Street' && config.currentAction.mode == 'Remove'"
+        (submitRemoveStreetEmitter)="isSucceeded = $event">
+      </remove-street-form>
+
+      <div *ngIf="isSucceeded" class="message">Succeeded</div>
+    </div>
+  </div>
+  <div class="map-area" id="map-area">
+    <div class="all-maps">
+      <canvas  class="map" id="map" width="2000" height="2000" ></canvas>
+      <app-map class="app-map" id="app-map"></app-map>
+    </div>
+    <div class="current-coord">x: {{config.cursor.x}} y: {{config.cursor.y}}</div>
+  </div>
+</div>

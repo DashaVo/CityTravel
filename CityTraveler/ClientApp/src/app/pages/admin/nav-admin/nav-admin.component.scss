@@ -1,0 +1,22 @@
+.nav-side {
+    height: 100%;
+    width: fit-content;
+    background-color: rgb(84, 85, 122);
+    padding-top: 20px;
+  }
+  a:hover {
+    background-color: rgb(106, 138, 197);
+  }
+  .active{
+    font-weight: 500;
+    background-color: rgb(106, 138, 197);
+  }
+  .nav-side a {
+    padding: 6px 12px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f0f9ff;
+    display: block;
+  }
+
+

@@ -1,0 +1,28 @@
+<div class="main-image">
+  <img *ngIf="config.mainImage" src="{{config.mainImage.source}}" alt="">
+  <img *ngIf="!config.mainImage" src="{{defaultImage}}" alt="">
+</div>
+<div class="content">
+  <div class="rating">
+    <rating [ratingValue]="config.averageRating" [isSmall]="true"></rating>
+    <button (click)="addEntertainmentToTrip(config.id, config.title)" *ngIf="isBtnVisible" class="add-to-trip-btn">+</button>
+  </div>
+  <div class="info">
+    <a class="title" [routerLink]="['/entertainment-profile/id?id=']" [queryParams]="{id:config.id}">
+      {{config.title}}
+    </a>
+    <div *ngIf="config.type" class="type half">
+      {{config.type}}
+    </div>
+    <div class="address half">
+      {{config.address.street.title}}, {{config.address.houseNumber}}, {{config.address.apartmentNumber}}
+    </div>
+    <div class="trips-count half">
+      Trips : {{config.tripsCount}}
+    </div>
+    <div class="reviews-count half">
+      Reviews : {{config.reviewsCount}}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,143 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+img{
+  vertical-align: middle;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+
+}
+ .icon{
+width: 36.48px;
+height: 36.48px;
+font-size: 30px;
+color: #FFFFFF;
+margin-top: 2px;
+}
+
+
+.title{
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  }
+  
+  
+   .desc{
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 29px;
+  }
+  
+  .container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  }
+  .review-card{
+    display: inline-flex;
+    justify-content: space-evenly;
+  }
+  .trip-card{
+    display: inline-flex;
+    justify-content: space-evenly;
+  }
+  .statistic-board{
+    margin-top: 2em;
+    display: inline-flex;
+    justify-content: space-evenly;
+  }
+.container{
+width: 100%;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+
+:host ::ng-deep .block{
+animation:scaledown 0.1s linear;
+animation-fill-mode: forwards;
+}
+
+:host ::ng-deep .block:hover{
+animation: scale 0.1s linear;
+animation-fill-mode:both;
+}
+
+
+
+@keyframes scale{
+0%{
+  transform:scale(1.0);
+}
+100%{
+  transform:scale(1.01);
+}
+}
+
+@keyframes scaledown{
+0%{
+  transform:scale(1.01);
+}
+ 100%{
+  transform:scale(1.0);
+}
+}
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-right: 0.25px;
+}
+
+.button{
+  text-decoration: none;
+  background-color: white;
+  border-width: 0pt;
+  width: 50px;
+  height: 50px;
+}
+
+.button:nth-child(1){
+  color: #1D7820;
+}
+.button:nth-child(2){
+  color: #CD0000;
+
+}
+.btn{
+  
+  background-color: rgb(72, 16, 201);
+  color: #FFFFFF;
+  
+  text-decoration: none;
+}
+button.button:hover:nth-child(2){
+  color: white;
+  background-color: #CD0000;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-width: 0pt;
+}
+
+button.button:hover:nth-child(1){
+  color: white;
+  background-color: #1D7820;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-width: 0pt;
+}

@@ -1,0 +1,91 @@
+.bg {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transition: ease .3s;
+}
+
+.modal-window {
+  position: fixed;
+  z-index: 10;
+  width: 400px;
+  height: min-content;
+  max-height: 90%;
+  margin: 30px -200px;
+  top: 0;
+  left: 50%;
+  overflow: auto;
+  border-radius: 30px;
+  border: 5px solid green;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-between;
+  padding: 5px;
+  background-color: rgba(1, 67, 1, 0.5);
+
+  .block {
+    height: 100%;
+    width: max-content;
+    min-width: 100%;
+    padding: 25px;
+    margin: 5px auto;
+    background-color: white;
+    color: rgba(1, 67, 1, 0.5);
+    border-radius: 30px;
+    border: 5px solid #84a181;
+    font-size: x-large;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: ease .2s;
+
+    &:hover{
+      color: rgba(1, 67, 1, 1);
+      border: 5px solid #4d9334;
+    }
+
+    @media screen and (max-width: 991px) {
+      & {
+        padding: 15px;
+        font-size: larger;
+      }
+    }
+  }
+
+  .trip {
+    padding: 0;
+    text-align: left;
+  }
+
+  .empty-content {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(23, 60, 17, 84) 47%, rgba(0, 0, 0, 0) 95%)
+  }
+}
+
+
+
+.modal::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.modal::-webkit-scrollbar
+{
+  width: 12px;
+  margin: 15px;
+}
+
+.modal::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+  margin: 15px;
+}
+

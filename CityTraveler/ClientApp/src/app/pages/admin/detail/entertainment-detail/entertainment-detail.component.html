@@ -1,0 +1,40 @@
+
+
+<div class="main">
+  <nav-admin></nav-admin>
+  <div class="container block">
+    <div class="image-header">
+      <div class="title" >{{entertaiment.title}}
+        <div class="type" >{{entertaiment.type}}</div>
+      </div>
+      <p class="desc">{{entertaiment.address.street.title}}</p>
+    </div>
+    <div class="statistic-board">
+      <infopoint title = "Price:" [value]="entertaiment.averagePrice.value" ></infopoint>
+      <infopoint title = "Rating:" [value]="entertaiment.averageRating" ></infopoint>
+      <infopoint title = "Time:" [value]="entertaiment.end+ entertaiment.begin" ></infopoint>
+    </div>
+    <div class="buttons-container">
+      <button class="button"><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+    <description [decs]=" entertaiment.description" ></description>
+    <div class="trip-content">
+      <see-more title = "Trips"></see-more>
+      <div class="trip-card" *ngFor="let item of trips">
+        <card-trip [trip]="item"></card-trip>
+      </div>
+    </div>
+    <div class="review-content">
+      <see-more title = "Reviews"></see-more>
+          <div class="review-card"  *ngFor="let item of reviews">
+            <card-review [review]="item"></card-review>
+        </div>
+    
+      </div>
+    
+    </div>
+
+   
+  </div>
+

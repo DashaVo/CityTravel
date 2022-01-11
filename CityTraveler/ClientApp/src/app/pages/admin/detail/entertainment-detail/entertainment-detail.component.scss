@@ -1,0 +1,118 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: white;
+  }
+  .buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-right: 0.25px;
+  }
+  .text{
+    font-style: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: capitalize;
+  color: #0E3010;
+}
+  .image-header{
+    background:  rgba(0, 0, 0, 0.5)100% url(https://cdn.80.lv/api/upload/post/3798/images/5d2c903f621b5/widen_1220x0.jpg);
+    width: 100%;
+    height: 20em;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2em;
+    color: white;
+    .title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 44px;
+      text-align: center;
+      text-transform: capitalize;
+      .type{
+        width: fit-content;
+        height: fit-content;
+        
+        background-color: yellowgreen;
+        padding: 0 1em;
+        border-radius: 10%;
+        font-size: 16px;
+      }
+    }
+
+  }
+  .button{
+    text-decoration: none;
+    background-color: white;
+    border-width: 0pt;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .button:nth-child(1){
+    color: #1D7820;
+  }
+  .button:nth-child(2){
+    color: #CD0000;
+  
+  }
+  
+  button.button:hover:nth-child(2){
+    color: white;
+    background-color: #CD0000;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    border-width: 0pt;
+  }
+  
+  button.button:hover:nth-child(1){
+    color: white;
+    background-color: #1D7820;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    border-width: 0pt;
+  }
+  .title{
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 29px;
+    text-transform: uppercase;
+    }
+    
+    
+     .desc{
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    }
+    
+    .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    .review-card{
+      display: block;
+      width: 100%;
+    }
+    .trip-card{
+      display: inline-flex;
+      justify-content: space-evenly;
+    }
+    .statistic-board{
+      margin-top: 2em;
+      display: inline-flex;
+      justify-content: space-evenly;
+    }

@@ -1,0 +1,45 @@
+<form  [formGroup]="entertaimentSearchForm">
+  <div  class="container search-location block">
+    <div class="input-fields">
+
+      <div>
+        <p class="desc">userName</p>
+        <input formControlName="userName" type="text" name="userName"/>
+      </div>
+
+      <div>
+        <p class="desc">email </p>
+        <input formControlName="email" type="text" name="email" />
+      </div>
+
+      <div >
+        <p class="desc">name </p>
+        <input formControlName="name" type="text" name="name" />
+      </div>
+
+      <div>
+        <p class="desc">phoneNumber </p>
+        <input formControlName="phoneNumber" type="text" name="phoneNumber" />
+      </div>
+
+
+      <div>
+            <p class="desc">Gender </p>
+            <select formControlName="gender">
+              <option value="female">female</option>
+              <option value="male" selected>male</option>
+            </select>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button [disabled]="!entertaimentSearchForm.valid" class = "btn" (click)="submit() ">
+        <h6 class="btn-text">
+            Search
+        </h6>
+        <mat-icon class="icon">search</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</form>

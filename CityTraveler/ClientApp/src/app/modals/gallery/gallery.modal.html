@@ -1,0 +1,6 @@
+<div class="bg" (click)="closeGallery()">
+</div>
+<div class="gallery">
+  <empty-content *ngIf="gallery.length == 0" [message]="'Here aren`t any photos'"></empty-content>
+  <img *ngFor="let image of gallery" src="{{image.source}}" alt="{{image.title}}">
+</div>

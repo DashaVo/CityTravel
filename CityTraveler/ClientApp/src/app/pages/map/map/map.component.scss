@@ -1,0 +1,25 @@
+
+.component-area {
+  height: 100%;
+  width: 100%;
+
+  .canvas {
+    position: absolute;
+  }
+  map{
+    top: 0;
+  }
+  .click-boxes{
+    position: absolute;
+    z-index: 3000000;
+    img{
+      opacity: 0;
+      height: 2000px;
+      width: 2000px;
+    }
+  }
+}
+
+
+
+

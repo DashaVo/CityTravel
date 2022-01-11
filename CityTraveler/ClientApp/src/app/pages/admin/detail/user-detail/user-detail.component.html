@@ -1,0 +1,63 @@
+<div class="main">
+<nav-admin></nav-admin>
+<div class="container">
+  <div class="content-image">
+    <img [src]="user.avatarSrc" alt="user image">
+  </div>
+<h3 class="title">
+    {{user.name}}
+</h3>
+<div class="desc">
+    
+    <p>
+        phoneNumber:
+        {{user.phoneNumber}}
+    </p>
+    <p>
+        gender:
+        {{user.gender}}
+    </p>
+    <p>
+        birthday:
+        {{user.birthday}}
+    </p>
+    <p>
+        email:
+        {{user.email}}
+    </p>
+    <p >
+        username:
+        {{user.userName}}
+    </p>
+    <div class="buttons-container">
+      <button class="button" (click) = "openUpdateModal()"  ><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+    <div class="user-content">
+      <div class="trip-content">
+        <see-more title = "Trips"></see-more>
+        <div class="trip-card" *ngFor="let item of trips">
+          <card-trip [trip]="item"></card-trip>
+        </div>
+      </div>
+      <div class="review-content">
+        <see-more title = "Reviews"></see-more>
+            <div class="review-card"  *ngFor="let item of reviews">
+              <card-review [review]="item"></card-review>
+          </div>
+        </div>
+      </div>
+      <div class="comment-content">
+        <see-more title = "Comments"></see-more>
+            <div class="comment-card"  *ngFor="let item of comments">
+              <cardcomment [comment]="item"></cardcomment>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+</div>
+
+
+

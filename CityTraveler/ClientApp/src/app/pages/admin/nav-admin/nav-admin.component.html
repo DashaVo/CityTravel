@@ -1,0 +1,9 @@
+
+<div class="nav-side">
+
+  <div *ngFor="let item of menuItems"  class="nav-item">
+    <a  [routerLink]="['/admin/',item.url]" routerLinkActive="active">
+      {{item.title}}
+    </a>
+  </div>
+</div>

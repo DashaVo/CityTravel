@@ -1,0 +1,13 @@
+<div class="wrap">
+  <h1>My Trips</h1>
+  <div class="user-trips-container">
+
+    <div class="user-trips" *ngFor="let trip of trips">
+      <a [routerLink]="['/my-trip/?tripId=']" [queryParams]="{tripId: trip.id}">
+       <p>{{trip.title}}</p>
+      </a>
+      <p>{{trip.id}}</p>
+      <p>{{trip.description}}</p>
+    </div>
+  </div>
+</div>

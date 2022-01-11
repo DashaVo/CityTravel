@@ -1,0 +1,70 @@
+<div class="default-trip">
+
+  <div class="default-trip-header">
+    <div class="default-trip-title">
+      <div class="default-trip-title-rating">
+        <h1 class="default-trip-title-text">{{defaultTrip.title}}</h1>
+        <div class="default-trip-average-rating">
+          <rating [isSmall]="false" [ratingValue]="defaultTrip.averageRating"></rating>
+        </div>
+      </div>
+      <p class="default-trip-tags">{{defaultTrip.tagString}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, nihil.</p>
+    </div>
+
+    <div class="start-trip-btn">
+      <button (click)="addToMyTrips(defaultTrip)" class="btn" type="button">Add to my trips</button>
+    </div>
+
+  </div>
+
+  <div class="defaut-trip-little-info">
+    <div class="defaut-trip-little-info-elem">
+      Count of Places
+    </div>
+
+    <div class="defaut-trip-little-info-elem">
+      Trip length
+    </div>
+    <div class="defaut-trip-little-info-elem">
+      Trip Price Price: {{defaultTrip.price | currency}}
+    </div>
+    <div class="defaut-trip-little-info-elem">
+      Optimal Spent: {{defaultTrip.optimalSpent}}
+    </div>
+  </div>
+
+  <div class="default-trip-description">
+    <p class="default-trip-description-text">
+      Description: {{defaultTrip.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quod exercitationem cupiditate ea saepe aut magnam, quaerat autem iste veritatis obcaecati atque totam aliquid adipisci, earum ullam quibusdam deleniti voluptatem expedita! Ea modi sapiente qui alias beatae suscipit atque earum dolor ipsam facere commodi numquam ab debitis, in mollitia voluptas id quidem delectus quod. Dolorem adipisci tempore recusandae, tenetur, reiciendis necessitatibus fugiat asperiores voluptate sit a suscipit eveniet rem aperiam ut unde distinctio itaque repellendus. Doloribus, pariatur. Voluptas minima alias similique tempore. Earum veniam ex id inventore dicta. Officiis quia neque ea eius. Quibusdam veritatis id maxime.
+    </p>
+  </div>
+
+  <def-trip-gallery></def-trip-gallery>
+
+  <div class="default-trip-reviews" *ngIf="isUserLoaded">
+<h3 class="default-trip-reviews-title">Reviews</h3>
+    <button class = "writeRev" (click)="openAddReviewModal()">Write review</button>
+    <br>
+    <br>
+    <div class="review">
+      <ngbd-rating-template #review [objectId]="defaultTrip.id" [userId]="userId"></ngbd-rating-template>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

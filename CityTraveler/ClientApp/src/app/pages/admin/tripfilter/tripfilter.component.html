@@ -1,0 +1,28 @@
+<div class="main">
+  <nav-admin ></nav-admin>
+  <div class="content">
+    <div class="title">
+      <p>Trips</p>
+      <p>find {{trips.length}}</p>
+      <div class="buttons-container">
+        <button class="button"><mat-icon>add</mat-icon></button>
+      </div>
+    </div>
+    <search-trip (filterTrips)="FilterTrips($event,0,10)"></search-trip>
+
+    <div *ngIf="!trips?.length" class="loader-container">
+      <div id="loading"></div>
+    </div>
+    <div class="search-results"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+      <div class="content" *ngFor="let item of trips">
+        <card-trip [trip]="item"></card-trip>
+      </div>
+    </div>
+
+  </div>
+</div>
+

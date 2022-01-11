@@ -1,0 +1,23 @@
+input {
+  &.ng-touched {
+    &.ng-invalid {
+      border:solid var(--red) 2px;
+    }
+    &.ng-valid {
+      border:solid green 2px;
+    }
+  }
+}
+tr {
+  th, td{
+    text-align: center;
+  }
+}
+button {
+  margin: 10px 0;
+}
+.avatarImg {
+  max-width: 250px;
+  max-height: 250px;
+  margin: 5px;
+}

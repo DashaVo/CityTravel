@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="nav">
+    <a routerLink="/my-trips" >My trips</a>
+    <a routerLink="/activity-by-user-id">My reviews</a>
+    <a [routerLink]="['/user/entr',user.Id]">My most popular Entertaiment</a>
+  </div>
+  <router-outlet user="userInfo"></router-outlet>
+  <div class="content">
+    <div class="img-container" *ngFor="let imageSrc of defaultImagesSrc">
+      <img [src]="imageSrc" alt="image"/>
+    </div>
+  </div>
+  <div class="left-side">
+    <div class="left-side-content">
+      <img class="img-avatar" [src]="user.avatarSrc?user.avatarSrc:defaultAvatar" alt="avatar"/>
+      <p>{{user.name}}<br>
+         {{user.email}}</p>
+      <ul class="socials-nav">
+        <li class="socials-nav-item"><a href="https://twitter.com/"><span class="fa fa-twitter"></span></a></li>
+        <li class="socials-nav-item"><a href="https://facebook.com/"><span class="fa fa-facebook"></span></a></li>
+        <li class="socials-nav-item"><a href="https://www.instagram.com/"><span class="fa fa-instagram"></span></a></li>
+    </ul>
+    </div>
+  </div>
+  <div class="section">
+    <div class="item">
+      <user-profile [user]="user" [showButtons] = "true"></user-profile>
+    </div >
+    <div>
+      <update-user [userData]="user"></update-user>
+    </div>
+    <div class="item">
+      <user-info></user-info>
+    </div>
+    <div class="item">
+      <user-range></user-range>
+    </div>
+   </div>
+</div>
+
+
+

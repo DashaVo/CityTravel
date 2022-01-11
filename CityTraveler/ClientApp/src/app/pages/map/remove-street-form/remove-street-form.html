@@ -1,0 +1,19 @@
+<div class="form">
+  <div class="property-name" [ngClass]="{'invalid': !currentStreetId}">Street</div>
+  <select
+    name="type"
+    id="type"
+    class="combo-box"
+    [(ngModel)]="currentStreetId"
+    #streetComboBox
+    (change)="setCurrentStreetId(streetComboBox.value)">
+    <option *ngFor="let street of streets" value="{{street.id}}">{{street.title}}</option>
+  </select>
+  <button
+    class="action-btn"
+    [ngClass]="{'invalid': !currentStreetId}"
+    (click)="submitRemoveStreet()">
+    Submit
+  </button>
+</div>
+

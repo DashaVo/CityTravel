@@ -1,0 +1,27 @@
+.area{
+  border: rgb(57, 75, 162) 3px;
+  border-style: groove;
+  margin: 0 auto;
+  max-width: 90%;
+
+  .search-panel{
+    margin: 10px 30px;
+    display: flex;
+
+    .search-item{
+      margin: 3px;
+      height: 37px;
+    }
+  }
+
+  .result-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .entertainment {
+      margin: 20px;
+    }
+  }
+}

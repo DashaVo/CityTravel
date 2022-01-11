@@ -1,0 +1,25 @@
+<div  class="container block">
+  <div>
+      <h3 class="title">{{item.street.title}}</h3>
+      <div class="info">
+        <div class="card-info">
+          <p class="desc" > apartmentNumber {{item.apartmentNumber}}</p>
+          <p class="desc" >houseNumber {{item.houseNumber}}</p>
+        </div>
+        <div class="ent">
+          <button (click) = "toggle()" class="btn">See Entertaiment</button>
+          <div *ngIf = "hide">
+            <div *ngFor="let item of entertaiments">
+              <card-entertaiment [info]="item" ></card-entertaiment>
+            </div>
+          </div>
+      </div>
+     </div>
+    </div>
+
+  <div class="buttons-container">
+      <button class="button"><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+</div>
+

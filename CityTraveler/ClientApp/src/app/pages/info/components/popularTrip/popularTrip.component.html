@@ -1,0 +1,19 @@
+<div class="info-container">
+  <div class="info-content">
+    <div class="img-container"  *ngFor="let image of popularTripInfo.images?defaultTripImagesSrc:popularTripInfo.images; index as i">
+      <img src={{image}} alt="image"/>
+    </div>
+    <div class="left-side">
+      <p><b>Title:</b> {{popularTripInfo.title}}</p>
+      <p><b>Description:</b>{{popularTripInfo.description}}</p>
+      <p><b>Tagstring:</b> {{popularTripInfo.tagString}}</p>
+      <p><b>AverageRating:</b> {{popularTripInfo.averageRating}}</p>
+      <p><b>Optimal Spent:</b> {{popularTripInfo.optimalSpent}}</p>
+      <p><b>Reviews:</b> {{popularTripInfo.reviews}}</p>
+      <p><b>Price:</b> {{popularTripInfo.price}}</p>
+      <div *ngFor="let item of popularTripInfo.entertainments; index as ind">
+        <p>{{popularTripInfo.entertainments[ind]}}</p>
+      </div>
+    </div>
+  </div>
+</div>

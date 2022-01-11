@@ -1,0 +1,76 @@
+<div class="wrap">
+  <search-header></search-header>
+
+  <div class="class-form">
+    <h3>Search trips</h3>
+    <p>Input parameters by which you want to find trips</p>
+  </div>
+
+  <div [formGroup]="tripSearchForm" class="form-group">
+    <div class = "row">
+      <div  *ngIf = "areAllFieldsImplemented" class="row-element">
+        <span class="label-column">User</span>
+        <input formControlName="user"  class="form-control value-column" type="text" name="User"  />
+      </div>
+
+      <div class="row-element">
+        <span class="label-column"> Price more</span>
+        <input formControlName="priceMore"  class="form-control value-column" type="number" min = 0 name="Price more" />
+      </div>
+
+      <div class="row-element">
+        <span class="label-column"> Price Less</span>
+        <input value = '1000000000' formControlName="priceLess"  class="form-control value-column" type="number" min = 0 name="Price less"  />
+      </div>
+      </div>
+
+    <div class = "row">
+      <div class="row-element">
+        <span class="label-column"> Average rating more</span>
+        <input value ='0' formControlName="ratingMore"  class="form-control value-column" type="number" min = 0 max = 5 name="Average rating more" />
+      </div>
+
+      <div class="row-element">
+        <span class="label-column"> Average rating less</span>
+        <input value = '5' formControlName="ratingLess"  class="form-control value-column" type="number" min = 0 max = 5 name="Average rating less"  />
+        </div>
+
+        <div class="row-element">
+        <span class="label-column"> Title</span>
+        <input formControlName="title"  class="form-control value-column" type="text" name="Title"  />
+      </div>
+      </div>
+
+    <div class = "row">
+      <div class="row-element">
+        <span class="label-column">Description</span>
+        <input formControlName="description"  class="form-control value-column" type="text" name="Description"  />
+      </div>
+
+        <div class="row-element">
+        <span class="label-column"> Trip status &nbsp;</span>
+        </div>
+
+        <div class = "row-element">
+        <select formControlName="tripStatus"  class="form-control value-column" name="plan1" id="plan1">
+            <option value="Passed">Passed</option>
+            <option value="New">New</option>
+            <option value="InProgress">InProgress</option>
+            <option value="All" selected>All</option>
+          </select>
+        </div>
+    </div>
+  </div>
+  <div>
+  <button  [disabled]="!tripSearchForm.valid" (click)="submitTrips()">Search</button>
+  </div>
+
+  <div class="default-trips-container">
+  <div class="default-trips" *ngFor="let tripInfo of trips">
+    <default-trip-preview [newTrip] = "tripInfo"></default-trip-preview>
+  </div>
+  </div>
+  <div *ngIf="trips.length === 0">
+      <p>Trips not found</p>
+  </div>
+</div>

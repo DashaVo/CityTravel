@@ -1,0 +1,32 @@
+
+<div class="main">
+  <nav-admin></nav-admin>
+  <div class="container block">
+    <p class="title">{{trip.title}}</p>
+    <p class="decs">description {{trip.description}}</p>
+    <p class="decs"> optimalSpent {{trip.optimalSpent}}</p>
+    <p class="decs">price {{trip.price}}</p>
+    <p class="decs">averageRating {{trip.averageRating}}</p>
+    <p class="decs">tagString {{trip.tagString}}</p>
+    
+    <p class="decs">Users</p>
+    
+   
+      <div  *ngFor="let item of users">
+        <a [routerLink]="['/admin/user/profile',item.userName]" >{{item.userName}}</a>
+      </div>
+      <p class="decs">Entertaiments</p>
+      <div class="enter">
+        <div  *ngFor="let item of entertaiments">
+          <card-entertaiment [info]="item" ></card-entertaiment>
+        </div>
+      </div>
+      
+    
+    <div class="buttons-container">
+      <button class="button"><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+  </div>
+
+  </div>

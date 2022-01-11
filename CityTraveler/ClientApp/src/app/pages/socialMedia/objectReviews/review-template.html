@@ -1,0 +1,11 @@
+<div *ngIf="isReadyToShow">
+<div *ngIf = "!isError">
+<comment-tree [reviews]="reviews" [objectId]="objectId" [userId] = "userId">  </comment-tree>
+<button (click)="openDialog()">Add review</button>
+</div>
+<div *ngIf = "isError" >
+    <p> Sorry to say it. But this page is down. Try later, please:) At least you have image of cute cat!!! </p>
+    <img src="https://i.pinimg.com/originals/db/32/23/db32232ee849096679c32d3392a87694.jpg" alt="cute_cat_sorry">
+</div>
+</div>
+

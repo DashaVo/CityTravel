@@ -1,0 +1,18 @@
+<form class="form"
+  [formGroup]="addStreetForm"
+  (ngSubmit)="submitAddStreet(addStreetForm)">
+  <div class="property-name">Points *</div>
+  <div class="points">
+    <div class="point" *ngFor="let point of points.currentPoints">{{point.longitude}} : {{point.latitude}}</div>
+  </div>
+  <button class="action-btn" *ngIf="points.currentPoints.length != 0" (click)="cleanCanvas()"> Clear </button>
+  <div class="property-name" [ngClass]="{'invalid': addStreetForm.controls['title'].invalid && addStreetForm.controls['title'].touched}">Title *</div>
+  <input class="input" formControlName="title" type="text">
+  <div class="hr"></div>
+  <div class="property-name">Description</div>
+  <textarea class="input" formControlName="title"  type="text" wrap="soft"></textarea>
+  <button class="action-btn"
+      [ngClass]="{'invalid': !addStreetForm.valid || points.currentPoints.length <= 1}"
+      type="submit">Submit</button>
+</form>
+

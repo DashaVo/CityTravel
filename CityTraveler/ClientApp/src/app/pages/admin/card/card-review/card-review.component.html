@@ -1,0 +1,41 @@
+
+<div  (click)="goTo()" class="container block">
+  <div  class="content">
+    <div  class="main-image">
+      <img src="https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg" alt="">
+    </div>
+
+    <div class="main-info">
+      <div class="title">
+        <p> {{review.title}}</p>
+        <p class="comments">comments 7</p>
+      </div>
+
+      <div class="head">
+        {{review.description}}
+      </div>
+      <div class="rating">
+        <p class="head">
+          ratingValue  
+        </p>
+        <ngb-rating [rate]="review.ratingValue"></ngb-rating>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="option">
+    <p class="head">
+      user
+      {{review.userName}}
+    </p>
+    <p class="comments">
+      {{review.modified | date}}
+    </p>
+    <div class="buttons-container">
+      <button class="button"><mat-icon>edit</mat-icon></button>
+      <button class="button" (click) = "openDeleteModal()" ><mat-icon>delete</mat-icon></button>
+  </div>
+  </div>
+ 
+</div>

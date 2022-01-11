@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="VisioForge.DotNet.Core.TRIAL" Version="14.4.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CityTraveler.Infrastructure\CityTraveler.Infrastructure.csproj" />
+    <ProjectReference Include="..\CityTraveler.Repository\CityTraveler.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+<div class="tirp">
+  <div class="head">
+    <div class="avatar">
+      <img src="{{config.mainImage ? config.mainImage.source : defaultImage}}" alt="">
+    </div>
+    <div class="main-info">
+      <div class="trip-title">
+        {{config.title ? config.title : "Unknown Trip"}}
+      </div>
+      <div class="tags">
+        {{config.tagSting}}
+      </div>
+      <rating class="rating" [ratingValue]="config.averageRating" [isSmall]="true"></rating>
+    </div>
+  </div>
+    <div class="description">
+      <div class="text">
+        {{config.description}}
+      </div>
+      <a class="read-more" *ngIf="config.dafaultTrip && isReadMoreActive" routerLink="/default-trip" [queryParams]="{'id':config.id}">read more...</a>
+      <a class="read-more" *ngIf="!config.dafaultTrip && isReadMoreActive" routerLink="/trip" [queryParams]="{'id':config.id}">read more...</a>
+    </div>
+    <div *ngIf="config.optimalSpent != '00:00:00'" class="optimal-spend">
+        Optimal spend: {{config.optimalSpent}}
+    </div>
+</div>
+<hr>

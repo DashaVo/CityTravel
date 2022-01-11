@@ -1,0 +1,22 @@
+<div class="response-item mt-4 d-flex">
+  <div class="left">
+      <span>
+          <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="profile-pict-img img-fluid" alt="" />
+      </span>
+  </div>
+  <div class="right">
+      <h4> {{comment.name}} </h4>
+      <div *ngIf="!comment.isEditing" class="review-description">
+          <p> {{comment.description}}</p>
+      </div>
+      <div>
+        <button (click)="deleteComment(comment.id)">Delete comment</button>
+        <button (click)="openEditingWindow(comment)">Edit comment</button>
+        <div *ngIf="comment.isEditing">
+          <textarea [(ngModel)]="comment.description" cols="80" rows="7"></textarea>
+          <br>
+          <button (click)="editComment(comment)">OK</button>
+        </div>
+      </div>
+  </div>
+</div>

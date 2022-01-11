@@ -1,0 +1,55 @@
+<div class="userInfo-form">
+  <button (click)="hidden = !hidden" class="btn btn-secondary btn-sm">Search users</button>
+</div>
+<div class="container py-2" *ngIf="!hidden">
+  <form [formGroup]="userInfoForm" class="py-2" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" placeholder="user@example.com">
+      <div class="alert alert-danger"
+           *ngIf="userInfoForm.controls['email'].invalid && userInfoForm.controls['email'].touched">
+        Please provide valid email
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender">Select gender</label>
+      <select class="form-control" id="gender" formControlName="gender">
+        <option value="" selected="selected"> </option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="py-2">
+      <table class="table table-hover">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Avatar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let userInfo of users; index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{userInfo.name}}</td>
+          <td>{{userInfo.email}}</td>
+          <td>{{userInfo.gender}}</td>
+          <td>
+            <img src={{userInfo.avatarSrc}} alt="Avatar" class="avatarImg"/>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="error" class="alert alert-warning ">{{error}}</div>
+  </form>
+</div>

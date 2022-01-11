@@ -1,0 +1,17 @@
+.footer{
+  flex: 0 0 auto;
+}
+
+.wrap{
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -10px 23px -4px rgba(34, 60, 80, 0.18);
+}
+.footer-element {
+  padding-right: 40px;
+}
+.footer-element:last-child{
+  padding-right: 0;
+}
